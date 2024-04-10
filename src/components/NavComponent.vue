@@ -51,6 +51,7 @@
 </template>
 
 <style lang="scss" scoped>
+    
    @use'../style/partials/bg-color';
     @use'../style/partials/layouts';
     @use'../style/partials/reset';

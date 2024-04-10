@@ -10,13 +10,18 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-
+    padding-left: 30px;
     
 }
 
 .col-nav{
     width: calc(3 * 100% / 6);
+   
     
+}
+
+.row-nav:first-child > .col-nav > *{
+    padding: 10px 10px;
 }
 
 .row-main{
