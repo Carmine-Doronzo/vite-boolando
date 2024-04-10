@@ -1,0 +1,49 @@
+.container{
+    max-width: 1000px;
+    margin:auto;
+}
+
+.row-nav{
+    max-width: 100%;
+    max-height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    
+}
+
+.col-nav{
+    width: calc(3 * 100% / 6);
+    
+}
+
+.row-main{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.col-main{
+    
+    position: relative;
+    width: calc(4 * 100% / 12);
+    padding: 15px;
+    
+    
+}
+
+.col-foot{
+
+    width: calc(2* 100% / 6);
+
+}
+
+.row-foot{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid white;
+}

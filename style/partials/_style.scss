@@ -1,0 +1,56 @@
+.badge{
+    
+    display:inline-block ;
+    color: white;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 700;
+    
+}
+
+
+
+.heart{
+    position: absolute;
+    display:inline-block ;
+    padding: 5px;
+    font-size: 30px;
+    top: 20px;
+    right: 15px;
+
+}
+
+.second-image{
+   
+    display: none;
+    
+    
+}
+
+
+.col-main:hover .main-image{
+    display: none;
+}
+
+.col-main:hover .second-image{
+    display: inline-block;
+}
+
+.heart:hover{
+    color: red;
+}
+
+.nav-logo{
+    max-width: 150px;
+    padding: 10px 0;
+}
+
+.icone{
+    font-size: 10px;
+}
+
+.pallino{
+    padding: 3px;
+    border: 1px solid white;
+    border-radius: 100px;
+}
