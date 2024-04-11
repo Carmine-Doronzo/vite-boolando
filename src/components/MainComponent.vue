@@ -1,4 +1,18 @@
 <script>
+    import CardComponent from './CardComponent.vue'
+    import DataProducts from '../assets/db.json'
+
+    export default{
+        data(){
+            return{
+                product:DataProducts.products
+            }
+        },
+        components:{
+            CardComponent
+        } 
+    }
+    
 
 </script>
 
@@ -9,11 +23,11 @@
             
             <div class="container">
                 
-                <div class="row-main">
-                    
-                    <div class="col-main">
+                <div class="row-main" >
+                    <CardComponent v-for="(item,i) in product" :key="item.id" :item="item" />
+                    <!-- <div v-for="(item,i) in product" :key="i" class="col-main" >
                         
-                        <img class="main-image" src="/img/1.webp" alt="">
+                        <img class="main-image" :src="`/img/${item.frontImage}`" alt="">
                         <img class="second-image" src="/img/1b.webp" alt="">
                         
                         <div class="line-height">
@@ -31,9 +45,9 @@
                         
                         <button class="heart bg-white">&hearts;</button>
                     
-                    </div>
+                    </div> -->
                     
-                    <div class="col-main">
+                    <!-- <div class="col-main">
                         
                         <img class="main-image" src="/img/2.webp" alt="">
                         <img class="second-image" src="/img/2b.webp" alt="">
@@ -144,7 +158,7 @@
 
                         <button class="heart bg-white">&hearts;</button>
                     
-                    </div>
+                    </div> -->
                 
                 </div>
 
