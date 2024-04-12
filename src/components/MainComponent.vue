@@ -6,12 +6,16 @@
     export default{
         data(){
             return{
-                product:productsArray.db
+                product:productsArray.db,
+                lenght:0
             }
         },
         components:{
             CardComponent,
             
+        },
+        methods:{
+         
         },
         mounted(){
             
@@ -21,14 +25,18 @@
                     const result = response.data[i]
                     this.product.push(result)
 
+                    this.lenght++
+                
                 }
+
+                
+                
                 //const result = response.data
                 //this.product = result
                 //console.log(result)
 
             })
 
-            console.log(this.product)
             
 
         }, 
@@ -46,11 +54,12 @@
             <div class="container">
                 
                 
-                    <ul class="row-main">
+                    <ul v-if="this.product.length === lenght" class="row-main">
                         <li class="col-main" v-for="(item,i) in product" :key="item.id">
                             <CardComponent  :item="item" />
                         </li>
                     </ul>
+                    <!-- <div>{{ this.lenght }}</div> -->
                     
                     <!-- <div v-for="(item,i) in product" :key="i" class="col-main" >
                         
