@@ -14,7 +14,7 @@
 
 <template>
     
-    <div  class="col-main" >
+    
                         
         <img class="main-image" :src="`/img/${item.frontImage}`" alt="">
         <img class="second-image" :src="`/img/${item.backImage}`" alt="">
@@ -49,7 +49,7 @@
         
         <button class="heart bg-white">&hearts;</button>
     
-    </div>
+    
 
     
 </template>

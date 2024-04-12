@@ -1,17 +1,39 @@
 <script>
     import CardComponent from './CardComponent.vue'
-    import DataProducts from '../assets/db.json'
+    import {productsArray} from '../store.js'
+    import axios from 'axios'
 
     export default{
         data(){
             return{
-                product:DataProducts.products
+                product:productsArray.db
             }
         },
         components:{
-            CardComponent
-        } 
+            CardComponent,
+            
+        },
+        mounted(){
+            
+            axios.get('http://localhost:3000/products').then((response)=>{
+                
+                for(let i = 0;i <response.data.length; i++ ){
+                    const result = response.data[i]
+                    this.product.push(result)
+
+                }
+                //const result = response.data
+                //this.product = result
+                //console.log(result)
+
+            })
+
+            console.log(this.product)
+            
+
+        }, 
     }
+    
     
 
 </script>
@@ -23,8 +45,13 @@
             
             <div class="container">
                 
-                <div class="row-main" >
-                    <CardComponent v-for="(item,i) in product" :key="item.id" :item="item" />
+                
+                    <ul class="row-main">
+                        <li class="col-main" v-for="(item,i) in product" :key="item.id">
+                            <CardComponent  :item="item" />
+                        </li>
+                    </ul>
+                    
                     <!-- <div v-for="(item,i) in product" :key="i" class="col-main" >
                         
                         <img class="main-image" :src="`/img/${item.frontImage}`" alt="">
@@ -160,7 +187,7 @@
                     
                     </div> -->
                 
-                </div>
+                
 
             </div>
         
