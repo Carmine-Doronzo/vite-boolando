@@ -7,6 +7,11 @@
                 type:Object,
                 
             }
+        },methods:{
+            hearth(item){
+                item.isInFavorites = !item.isInFavorites
+
+            }
         }
         
     }
@@ -47,8 +52,8 @@
             
         </div>
         
-        <button class="heart bg-white">&hearts;</button>
-    
+        <button @click="hearth(item)" :class="item.isInFavorites === true ? 'heart bg-white heart-color':'heart bg-white'">&hearts;</button>
+        
     
 
     
