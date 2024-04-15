@@ -1,13 +1,13 @@
 <script>
     import CardComponent from './CardComponent.vue'
     import {productsArray} from '../store.js'
-    import axios from 'axios'
+    //import axios from 'axios'
 
     export default{
         data(){
             return{
                 product:productsArray.db,
-                lenght:0
+                //lenght:0
             }
         },
         components:{
@@ -17,29 +17,29 @@
         methods:{
          
         },
-        mounted(){
+        // mounted(){
             
-            axios.get('http://localhost:3000/products').then((response)=>{
+        //     axios.get('http://localhost:3000/products').then((response)=>{
                 
-                for(let i = 0;i <response.data.length; i++ ){
-                    const result = response.data[i]
-                    this.product.push(result)
+        //         for(let i = 0;i <response.data.length; i++ ){
+        //             const result = response.data[i]
+        //             this.product.push(result)
 
-                    this.lenght++
+        //             this.lenght++
                 
-                }
+        //         }
 
                 
                 
-                //const result = response.data
-                //this.product = result
-                //console.log(result)
+        //         //const result = response.data
+        //         //this.product = result
+        //         //console.log(result)
 
-            })
+        //     })
 
             
 
-        }, 
+        // }, 
     }
     
     
@@ -54,7 +54,7 @@
             <div class="container">
                 
                 
-                    <ul v-if="this.product.length === lenght" class="row-main">
+                    <ul class="row-main">
                         <li class="col-main" v-for="(item,i) in product" :key="item.id">
                             <CardComponent  :item="item" />
                         </li>
